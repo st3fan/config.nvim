@@ -4,6 +4,12 @@
 
 lspconfig = require "lspconfig"
 
+function setup_eldoc()
+    package.loaded["eldoc"] = nil
+    eldoc = require "eldoc"
+    eldoc.setup()
+end
+
 lspconfig.gopls.setup {
     cmd = { "gopls", "serve" },
     filetypes = {"go", "gomod"},
@@ -11,6 +17,7 @@ lspconfig.gopls.setup {
     single_file_support = true,
     settings = {
         gopls = {
+            hoverKind = "SingleLine", -- TODO Can we do this per request?
             experimentalPostfixCompletions = true,
             analyses = {
                 unusedparams = true,
@@ -20,7 +27,6 @@ lspconfig.gopls.setup {
         },
     },
     on_attach = function(client, bufnr)
-        print("HELLO")
         local buf_set_keymap = function(mode, key, result)
             vim.api.nvim_buf_set_keymap(0, mode, key, "<cmd>lua "..result.."<cr>",
                 {noremap = true, silent = true})
@@ -36,6 +42,10 @@ lspconfig.gopls.setup {
         -- Telescope
         buf_set_keymap('n', '<leader>fds', "require('telescope.builtin').lsp_document_symbols()")
         buf_set_keymap('n', '<leader>fws', "require('telescope.builtin').lsp_workspace_symbols()")
+
+        -- TODO buf_set_keymap('n', 'K', 'run_eldoc()')
+
+        setup_eldoc()
     end
 }
 
