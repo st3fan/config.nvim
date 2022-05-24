@@ -3,7 +3,6 @@
 -- file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 vim.o.number = true
-vim.o.scrolloff = 4
 
 vim.o.termguicolors = true
 vim.o.syntax = 'on'

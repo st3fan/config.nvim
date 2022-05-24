@@ -10,6 +10,15 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     -- Appearance
     use { 'Mofiqul/dracula.nvim' }
+    use { 'sainnhe/gruvbox-material' }
+    use { 'folke/tokyonight.nvim' }
     use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true} }
+    -- Navigation
+    use { 'farmergreg/vim-lastplace' }
+    use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+    -- General Development
+    use { 'nvim-treesitter/nvim-treesitter' }
+    -- Go
+    use { 'neovim/nvim-lspconfig' }
 end)
 
