@@ -13,12 +13,15 @@ return require('packer').startup(function()
     use { 'sainnhe/gruvbox-material' }
     use { 'folke/tokyonight.nvim' }
     use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true} }
+    use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
     -- Navigation
     use { 'farmergreg/vim-lastplace' }
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     -- General Development
     use { 'nvim-treesitter/nvim-treesitter' }
+    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
     -- Go
     use { 'neovim/nvim-lspconfig' }
+    use { 'crispgm/nvim-go', config = function() require('go').setup({}) end }
 end)
 
