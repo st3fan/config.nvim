@@ -23,5 +23,8 @@ return require('packer').startup(function()
     -- Go
     use { 'neovim/nvim-lspconfig' }
     use { 'crispgm/nvim-go', config = function() require('go').setup({}) end }
+    -- Completion
+    use { 'hrsh7th/nvim-cmp' }
+    use { 'hrsh7th/cmp-nvim-lsp' }
 end)
 

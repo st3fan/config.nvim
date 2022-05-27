@@ -13,4 +13,5 @@ require("mappings")
 require("setup_treesitter")
 require("setup_golang")
 require("setup_neogit")
+require("setup_completion")
 
