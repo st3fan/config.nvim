@@ -10,8 +10,11 @@ require("plugins")
 require("appearance")
 require("mappings")
 
+require("git")
+
 require("setup_treesitter")
 require("setup_golang")
 require("setup_neogit")
-require("setup_completion")
+-- require("setup_completion") TODO This needs work
+require("setup_elixir")
 

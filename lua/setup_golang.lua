@@ -2,6 +2,9 @@
 -- License, v. 2.0. If a copy of the MPL was not distributed with this
 -- file, You can obtain one at http://mozilla.org/MPL/2.0/
 
+local opt = vim.opt
+local cmd = vim.api.nvim_command
+
 lspconfig = require "lspconfig"
 
 function setup_eldoc()
@@ -43,7 +46,17 @@ lspconfig.gopls.setup {
         buf_set_keymap('n', '<leader>fds', "require('telescope.builtin').lsp_document_symbols()")
         buf_set_keymap('n', '<leader>fws', "require('telescope.builtin').lsp_workspace_symbols()")
 
-        -- TODO buf_set_keymap('n', 'K', 'run_eldoc()')
+        -- Highlight identifiers
+        opt.updatetime = 500
+        --cmd('highlight LspReferenceText guifg=darkyellow')
+
+        vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, {
+            callback = vim.lsp.buf.document_highlight
+        })
+
+        vim.api.nvim_create_autocmd("CursorMoved", {
+            callback = vim.lsp.buf.clear_references
+        })
 
         setup_eldoc()
     end

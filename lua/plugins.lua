@@ -14,6 +14,10 @@ return require('packer').startup(function()
     use { 'folke/tokyonight.nvim' }
     use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true} }
     use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
+    use { "catppuccin/nvim", as = "catppuccin" }
+    use { 'Mofiqul/vscode.nvim' }
+    use { "ellisonleao/gruvbox.nvim" }
+    use { "projekt0n/github-nvim-theme" }
     -- Navigation
     use { 'farmergreg/vim-lastplace' }
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
@@ -23,6 +27,7 @@ return require('packer').startup(function()
     -- Go
     use { 'neovim/nvim-lspconfig' }
     use { 'crispgm/nvim-go', config = function() require('go').setup({}) end }
+    -- Elixir
     -- Completion
     use { 'hrsh7th/nvim-cmp' }
     use { 'hrsh7th/cmp-nvim-lsp' }
