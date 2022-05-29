@@ -1,4 +1,7 @@
-
+-- This Source Code Form is subject to the terms of the Mozilla Public
+-- License, v. 2.0. If a copy of the MPL was not distributed with this
+-- file, You can obtain one at http://mozilla.org/MPL/2.0/
+--
 -- TODO Not sure why we need this
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
@@ -47,7 +50,7 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
     }, {
-        { name = 'buffer' },
+        -- { name = 'buffer' },
     })
 })
 
