@@ -24,3 +24,8 @@ vim.keymap.set('n', '<leader>twd', function()
     })
 end)
 
+map('n', '<leader>fht', [[:Telescope help_tags<cr>]], {})
+map('n', '<leader>fht', [[:Telescope help_tags<cr>]], {})
+
+map('n', '<C-Left>', [[:tabprevious<cr>]], {})
+map('n', '<C-Right>', [[:tabnext<cr>]], {})

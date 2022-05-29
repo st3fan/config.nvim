@@ -5,13 +5,17 @@
 local opt = vim.opt
 local cmd = vim.api.nvim_command
 
-lspconfig = require "lspconfig"
+local lspconfig = require "lspconfig"
 
 function setup_eldoc()
     package.loaded["eldoc"] = nil
     eldoc = require "eldoc"
     eldoc.setup()
 end
+
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+-- local settings = require('eldoc').update_settings(settings)
 
 lspconfig.gopls.setup {
     cmd = { "gopls", "serve" },
@@ -20,8 +24,9 @@ lspconfig.gopls.setup {
     single_file_support = true,
     settings = {
         gopls = {
-            hoverKind = "SingleLine", -- TODO Can we do this per request?
+            hoverKind = "Structured",
             experimentalPostfixCompletions = true,
+            usePlaceholders = true,
             analyses = {
                 unusedparams = true,
                 shadow = true,
@@ -29,6 +34,7 @@ lspconfig.gopls.setup {
             staticcheck = true,
         },
     },
+    capabilities = capabilities,
     on_attach = function(client, bufnr)
         local buf_set_keymap = function(mode, key, result)
             vim.api.nvim_buf_set_keymap(0, mode, key, "<cmd>lua "..result.."<cr>",
@@ -48,7 +54,6 @@ lspconfig.gopls.setup {
 
         -- Highlight identifiers
         opt.updatetime = 500
-        --cmd('highlight LspReferenceText guifg=darkyellow')
 
         vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, {
             callback = vim.lsp.buf.document_highlight
@@ -58,7 +63,7 @@ lspconfig.gopls.setup {
             callback = vim.lsp.buf.clear_references
         })
 
-        setup_eldoc()
+        -- setup_eldoc()
     end
 }
 

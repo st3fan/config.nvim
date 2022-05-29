@@ -17,3 +17,4 @@ vim.o.shiftwidth = 4               -- num:  Size of an indent
 vim.o.softtabstop = 4              -- num:  Number of spaces tabs count for in insert mode
 vim.o.tabstop = 4                  -- num:  Number of spaces tabs count for
 
+vim.o.autochdir = true             -- Automatically change cwd to buffer's file

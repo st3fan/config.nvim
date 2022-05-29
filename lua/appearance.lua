@@ -14,9 +14,11 @@ vim.opt.signcolumn = 'yes'   -- str: column for signs
 
 --vim.cmd[[colorscheme gruvbox]]
 
-require("github-theme").setup({
-    theme_style = "light",
-})
+--require("github-theme").setup({
+--    theme_style = "dark",
+--})
+
+vim.cmd[[colorscheme catppuccin]]
 
 require('lualine').setup {
   options = {

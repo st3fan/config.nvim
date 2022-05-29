@@ -13,8 +13,7 @@ require("mappings")
 require("git")
 
 require("setup_treesitter")
-require("setup_golang")
+require("setup_completion")
 require("setup_neogit")
--- require("setup_completion") TODO This needs work
-require("setup_elixir")
+require("setup_golang")
 
