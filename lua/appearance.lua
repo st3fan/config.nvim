@@ -18,6 +18,7 @@ vim.opt.signcolumn = 'yes'   -- str: column for signs
 --    theme_style = "dark",
 --})
 
+--vim.g.catppuccin_flavour = "latte"
 vim.cmd[[colorscheme catppuccin]]
 
 require('lualine').setup {
