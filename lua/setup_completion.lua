@@ -9,15 +9,15 @@ local cmp = require'cmp'
 local luasnip = require('luasnip')
 
 cmp.setup({
-    enabled = function()
-        -- Do not enable completion when inside a comment.
-        local context = require("cmp.config.context")
-        if context.in_treesitter_capture("comment") or context.in_syntax_group("Comment") then
-          return false
-        else
-          return true
-        end
-    end,
+--    enabled = function()
+--        -- Do not enable completion when inside a comment.
+--        local context = require("cmp.config.context")
+--        if context.in_treesitter_capture("comment") or context.in_syntax_group("Comment") then
+--          return false
+--        else
+--          return true
+--        end
+--    end,
     snippet = {
         expand = function(args)
             require('luasnip').lsp_expand(args.body)

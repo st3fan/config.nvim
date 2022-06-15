@@ -18,8 +18,9 @@ vim.opt.signcolumn = 'yes'   -- str: column for signs
 --    theme_style = "dark",
 --})
 
---vim.g.catppuccin_flavour = "latte"
-vim.cmd[[colorscheme catppuccin]]
+--vim.cmd[[colorscheme catppuccin]]
+vim.cmd[[colorscheme gruvbox]]
+opt.background = 'dark'
 
 require('lualine').setup {
   options = {
@@ -29,4 +30,3 @@ require('lualine').setup {
     section_separators = { left = '', right = ''},
   }
 }
-

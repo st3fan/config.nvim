@@ -15,6 +15,8 @@ return require('packer').startup(function()
     use { 'nvim-lualine/lualine.nvim' }
     use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
     use { "catppuccin/nvim", as = "catppuccin" }
+    use { "npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"} }
+    use { "mcchrish/zenbones.nvim", requires = "rktjmp/lush.nvim" }
     -- use { 'Mofiqul/vscode.nvim' }
     -- use { "ellisonleao/gruvbox.nvim" }
     -- use { "projekt0n/github-nvim-theme" }
@@ -24,6 +26,7 @@ return require('packer').startup(function()
     -- General Development
     use { 'nvim-treesitter/nvim-treesitter' }
     use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+    use { 'numToStr/Comment.nvim' }
     -- Go
     use { 'neovim/nvim-lspconfig' }
     -- use { 'crispgm/nvim-go', config = function() require('go').setup({}) end }

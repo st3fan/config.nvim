@@ -18,3 +18,5 @@ vim.o.softtabstop = 4              -- num:  Number of spaces tabs count for in i
 vim.o.tabstop = 4                  -- num:  Number of spaces tabs count for
 
 vim.o.autochdir = true             -- Automatically change cwd to buffer's file
+
+vim.o.timeoutlen = 1000            -- Workaround for Comment not working?

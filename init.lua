@@ -3,7 +3,7 @@
 -- file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 vim.g.mapleader = ","
-vim.g.localleader = "\\"
+--vim.g.localleader = "\\" -- Not sure what this does. I've never used this.
 
 require("options")
 require("plugins")
@@ -14,6 +14,9 @@ require("git")
 
 require("setup_treesitter")
 require("setup_completion")
+--require("setup_elixir")
 require("setup_neogit")
-require("setup_golang")
-
+--require("setup_golang")
+--require("setup_deno")
+require("setup_javascript")
+require("setup_comment")
