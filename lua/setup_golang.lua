@@ -24,12 +24,15 @@ lspconfig.gopls.setup {
     single_file_support = true,
     settings = {
         gopls = {
-            hoverKind = "Structured",
+            --hoverKind = "Structured",
             experimentalPostfixCompletions = true,
             usePlaceholders = true,
             analyses = {
+                nilness = true,
                 unusedparams = true,
                 shadow = true,
+                unusedwrite = true,
+                useany = true,
             },
             staticcheck = true,
         },
@@ -63,7 +66,7 @@ lspconfig.gopls.setup {
             callback = vim.lsp.buf.clear_references
         })
 
-        -- setup_eldoc()
+        setup_eldoc()
     end
 }
 
