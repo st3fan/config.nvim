@@ -4,11 +4,30 @@
 
 local map = vim.api.nvim_set_keymap
 
--- Telescope
+-- Telescope mappings should probably be in setup_telescope.lua
+
 --map('n', '<leader>ff', [[:Telescope find_files<cr>]], {})
 map('n', '<leader>tgf', [[:Telescope git_files<cr>]], {})
-map('n', '<leader>tb', [[:Telescope buffers<cr>]], {})
+--map('n', '<leader>tb', [[:Telescope buffers<cr>]], {})
 map('n', '<leader>fht', [[:Telescope help_tags<cr>]], {})
+
+local no_preview = function()
+  return require('telescope.themes').get_dropdown({
+    borderchars = {
+      { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+      prompt = {"─", "│", " ", "│", '┌', '┐', "│", "│"},
+      results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
+      preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+    },
+    width = 0.8,
+    previewer = false,
+    prompt_title = false
+  })
+end
+
+vim.keymap.set('n', '<leader>tb', function()
+    require('telescope.builtin').buffers(no_preview())
+end)
 
 -- Telescope find files
 vim.keymap.set('n', '<leader>tff', function()

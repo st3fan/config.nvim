@@ -24,6 +24,11 @@ lsp.tsserver.setup{
     on_attach = on_attach,
     debounce_text_changes = 150,
     single_file_support = true,
+    settings = {
+        completions = {
+          completeFunctionCalls = true
+        }
+    },
     init_options = {
         hostInfo = "neovim",
         preferences = {
