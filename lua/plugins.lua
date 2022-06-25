@@ -27,6 +27,7 @@ return require('packer').startup(function()
     use { 'nvim-treesitter/nvim-treesitter' }
     use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
     use { 'numToStr/Comment.nvim' }
+    use { 'windwp/nvim-autopairs' }
     -- Go
     use { 'neovim/nvim-lspconfig' }
     -- use { 'crispgm/nvim-go', config = function() require('go').setup({}) end }

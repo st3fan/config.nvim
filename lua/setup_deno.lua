@@ -9,10 +9,8 @@ local lspconfig = require "lspconfig"
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
--- local settings = require('eldoc').update_settings(settings)
-
 lspconfig.denols.setup {
-    --root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+    root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
     capabilities = capabilities,
     on_attach = function(client, bufnr)
         local buf_set_keymap = function(mode, key, result)
