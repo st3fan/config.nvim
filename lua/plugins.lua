@@ -9,17 +9,12 @@ return require('packer').startup(function()
     -- Manage Packer with Packer
     use 'wbthomason/packer.nvim'
     -- Appearance
-    -- use { 'Mofiqul/dracula.nvim' }
-    -- use { 'sainnhe/gruvbox-material' }
-    -- use { 'folke/tokyonight.nvim' }
     use { 'nvim-lualine/lualine.nvim' }
     use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
     use { "catppuccin/nvim", as = "catppuccin" }
     use { "npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"} }
-    use { "mcchrish/zenbones.nvim", requires = "rktjmp/lush.nvim" }
-    -- use { 'Mofiqul/vscode.nvim' }
-    -- use { "ellisonleao/gruvbox.nvim" }
-    -- use { "projekt0n/github-nvim-theme" }
+    use { "catppuccin/nvim", as = "catppuccin" }
+
     -- Navigation
     use { 'farmergreg/vim-lastplace' }
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }

@@ -3,7 +3,7 @@
 -- file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 vim.o.number = true
-vim.o.relativenumber = true
+vim.o.relativenumber = false
 
 vim.o.termguicolors = true
 vim.o.syntax = 'on'
@@ -18,6 +18,7 @@ vim.o.shiftwidth = 4               -- num:  Size of an indent
 vim.o.softtabstop = 4              -- num:  Number of spaces tabs count for in insert mode
 vim.o.tabstop = 4                  -- num:  Number of spaces tabs count for
 
-vim.o.autochdir = true             -- Automatically change cwd to buffer's file
+-- Disabled because this confuses me every time
+-- vim.o.autochdir = true             -- Automatically change cwd to buffer's file
 
 vim.o.timeoutlen = 1000            -- Workaround for Comment not working?

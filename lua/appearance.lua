@@ -9,18 +9,11 @@ opt.syntax = "ON"            -- str:  Allow syntax highlighting
 opt.termguicolors = true     -- bool: If term supports ui color then enable
 vim.opt.signcolumn = 'yes'   -- str: column for signs
 
---opt.background = 'light'
---cmd('colorscheme tokyonight')
-
---vim.cmd[[colorscheme gruvbox]]
-
---require("github-theme").setup({
---    theme_style = "dark",
---})
-
---vim.cmd[[colorscheme catppuccin]]
 vim.cmd[[colorscheme gruvbox]]
-opt.background = 'dark'
+opt.background = 'light'
+
+-- vim.g.catppuccin_flavour = "latte" -- latte, frappe, macchiato, mocha
+-- vim.cmd[[colorscheme catppuccin]]
 
 require('lualine').setup {
   options = {
