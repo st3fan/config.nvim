@@ -57,7 +57,7 @@ cmp.setup({
     },
     preselect = cmp.PreselectMode.None,
     sources = cmp.config.sources({
-        { name = 'luasnip' },
+        -- { name = 'luasnip' }, Disabling for now because annoying
         { name = 'nvim_lsp' },
     }, {
         -- { name = 'buffer' },

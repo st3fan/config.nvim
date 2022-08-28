@@ -36,5 +36,7 @@ return require('packer').startup(function()
     use { 'L3MON4D3/LuaSnip' }
     use { 'saadparwaiz1/cmp_luasnip' }
     use { 'rafamadriz/friendly-snippets' }
+    -- Elixir
+    use { "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" }}
 end)
 

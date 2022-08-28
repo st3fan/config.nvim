@@ -10,7 +10,7 @@ opt.termguicolors = true     -- bool: If term supports ui color then enable
 vim.opt.signcolumn = 'yes'   -- str: column for signs
 
 vim.cmd[[colorscheme gruvbox]]
-opt.background = 'light'
+opt.background = 'dark'
 
 -- vim.g.catppuccin_flavour = "latte" -- latte, frappe, macchiato, mocha
 -- vim.cmd[[colorscheme catppuccin]]
