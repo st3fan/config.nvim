@@ -8,12 +8,15 @@ local cmd = vim.api.nvim_command
 opt.syntax = "ON"            -- str:  Allow syntax highlighting
 opt.termguicolors = true     -- bool: If term supports ui color then enable
 vim.opt.signcolumn = 'yes'   -- str: column for signs
+vim.wo.cursorline = true
 
-vim.cmd[[colorscheme gruvbox]]
-opt.background = 'dark'
+-- vim.cmd[[colorscheme gruvbox]]
+-- opt.background = 'dark'
 
 -- vim.g.catppuccin_flavour = "latte" -- latte, frappe, macchiato, mocha
 -- vim.cmd[[colorscheme catppuccin]]
+
+vim.cmd[[colorscheme nord]]
 
 require('lualine').setup {
   options = {

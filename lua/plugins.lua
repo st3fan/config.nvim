@@ -14,6 +14,7 @@ return require('packer').startup(function()
     use { "catppuccin/nvim", as = "catppuccin" }
     use { "npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"} }
     use { "catppuccin/nvim", as = "catppuccin" }
+    use { 'shaunsingh/nord.nvim' }
 
     -- Navigation
     use { 'farmergreg/vim-lastplace' }
