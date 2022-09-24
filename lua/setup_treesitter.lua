@@ -3,7 +3,7 @@
 -- file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = { "go" },
+    ensure_installed = { "go", "elixir", "rust", "python" },
     sync_install = true,
     highlight = {
         enable = true,

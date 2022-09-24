@@ -130,6 +130,11 @@ _G.packer_plugins = {
     path = "/Users/stefan/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/npxbr/gruvbox.nvim"
   },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/Users/stefan/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/stefan/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -144,6 +149,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/stefan/.local/share/nvim/site/pack/packer/start/neogit",
     url = "https://github.com/TimUntersberger/neogit"
+  },
+  ["nord.nvim"] = {
+    loaded = true,
+    path = "/Users/stefan/.local/share/nvim/site/pack/packer/start/nord.nvim",
+    url = "https://github.com/shaunsingh/nord.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,

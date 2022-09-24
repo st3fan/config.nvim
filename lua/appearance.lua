@@ -13,10 +13,10 @@ vim.wo.cursorline = true
 -- vim.cmd[[colorscheme gruvbox]]
 -- opt.background = 'dark'
 
--- vim.g.catppuccin_flavour = "latte" -- latte, frappe, macchiato, mocha
--- vim.cmd[[colorscheme catppuccin]]
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+vim.cmd[[colorscheme catppuccin]]
 
-vim.cmd[[colorscheme nord]]
+-- vim.cmd[[colorscheme nord]]
 
 require('lualine').setup {
   options = {

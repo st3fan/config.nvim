@@ -25,17 +25,17 @@ local no_preview = function()
   })
 end
 
-vim.keymap.set('n', '<leader>tb', function()
+vim.keymap.set('n', '<leader>b', function()
     require('telescope.builtin').buffers(no_preview())
 end)
 
 -- Telescope find files
-vim.keymap.set('n', '<leader>tff', function()
+vim.keymap.set('n', '<leader>f', function()
   require('telescope.builtin').find_files { previewer = false }
 end)
 
 -- telescope workspace diagnostics
-vim.keymap.set('n', '<leader>twd', function()
+vim.keymap.set('n', '<leader>d', function()
     require('telescope.builtin').diagnostics({
         -- TODO Make this work. I would like 5 lines of results and the rest preview.
         layout_strategy = 'vertical',
