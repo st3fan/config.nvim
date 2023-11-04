@@ -13,11 +13,24 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    -- Git related plugins
-    'tpope/vim-fugitive',
-    'tpope/vim-rhubarb',
+    {
+        "startup-nvim/startup.nvim"
+    },
 
-    "farmergreg/vim-lastplace",
+    {
+        "NeogitOrg/neogit",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+            "sindrets/diffview.nvim",
+            "ibhagwan/fzf-lua",
+        },
+        config = true
+    },
+
+    {
+        "farmergreg/vim-lastplace"
+    },
 
     {
         'numToStr/Comment.nvim',
@@ -72,8 +85,8 @@ require("lazy").setup({
         "williamboman/mason-lspconfig.nvim",
     },
 
+    -- Messy ...
     { "WhoIsSethDaniel/mason-tool-installer.nvim" },
-
     { 'j-hui/fidget.nvim',                        tag = 'legacy',                                   opts = {} },
     { 'VonHeikemen/lsp-zero.nvim',                branch = 'v3.x' },
     { 'neovim/nvim-lspconfig' },
@@ -82,5 +95,4 @@ require("lazy").setup({
     { 'L3MON4D3/LuaSnip',                         dependencies = { "rafamadriz/friendly-snippets" } },
     { 'saadparwaiz1/cmp_luasnip' },
 
-    { 'startup-nvim/startup.nvim' },
 })
