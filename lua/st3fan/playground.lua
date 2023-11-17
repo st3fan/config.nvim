@@ -2,9 +2,9 @@
 -- License, v. 2.0. If a copy of the MPL was not distributed with this
 -- file, You can obtain one at http://mozilla.org/MPL/2.0/
 
--- Random things I am experimenting with
-
+--
 -- Show the filename in the top right
+--
 
 vim.api.nvim_create_autocmd('FileType', {
     pattern = { "*" },
@@ -18,7 +18,9 @@ vim.api.nvim_create_autocmd('FileType', {
     end
 })
 
+--
 -- Toggle Theme
+--
 
 local DARK_THEME = 'catppuccin-mocha'
 local LIGHT_THEME = 'catppuccin-latte'
@@ -31,7 +33,9 @@ vim.keymap.set("n", "<leader>tt", function()
     end
 end)
 
+--
 -- Toggle Number
+--
 
 vim.keymap.set("n", "<leader>tn", function()
     vim.o.number = not vim.o.number

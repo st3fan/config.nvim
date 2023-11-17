@@ -105,4 +105,10 @@ require("lazy").setup({
     { 'L3MON4D3/LuaSnip',                         dependencies = { "rafamadriz/friendly-snippets" } },
     { 'saadparwaiz1/cmp_luasnip' },
 
+    {
+        'echasnovski/mini.nvim',
+        commit = "b5645ac6eefce8e7af9d7dd4e5e296a81cba8a10", -- Audited on 2023-11-17
+        pin = true,
+    },
+
 })
