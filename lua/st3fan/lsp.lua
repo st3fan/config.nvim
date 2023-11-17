@@ -13,11 +13,17 @@ require('mason-tool-installer').setup({
 })
 
 require('mason-lspconfig').setup({
-    ensure_installed = { 'jsonls', 'gopls', 'rust_analyzer', 'pyright', 'html', 'lua_ls' },
+    ensure_installed = { 'jsonls', 'gopls', 'rust_analyzer', 'pyright', 'html', 'lua_ls', 'terraformls' },
     handlers = {
         lsp_zero.default_setup,
     },
 })
+
+function setup_eldoc()
+    package.loaded["st3fan.eldoc"] = nil
+    eldoc = require("st3fan.eldoc")
+    eldoc.setup()
+end
 
 local lspconfig = require('lspconfig')
 
@@ -36,6 +42,19 @@ lspconfig.gopls.setup({
                 vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
             end,
         })
+
+        -- Highlight identifiers
+        -- opt.updatetime = 500
+        --
+        -- vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+        --     callback = vim.lsp.buf.document_highlight
+        -- })
+        --
+        -- vim.api.nvim_create_autocmd("CursorMoved", {
+        --     callback = vim.lsp.buf.clear_references
+        -- })
+
+        setup_eldoc()
     end
 })
 
@@ -60,6 +79,9 @@ lspconfig.jsonls.setup({
     -- TODO
 })
 
+lspconfig.terraformls.setup({
+    -- TODO
+})
 
 --local lua_opts = lsp_zero.nvim_lua_ls()
 lspconfig.lua_ls.setup({

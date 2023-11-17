@@ -1,5 +1,5 @@
-vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.opt.number = true
+-- vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -19,4 +19,3 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.opt.cursorline = true
-

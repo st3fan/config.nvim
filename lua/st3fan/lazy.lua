@@ -35,6 +35,11 @@ require("lazy").setup({
     },
 
     {
+        "j-hui/fidget.nvim",
+        opts = {},
+    },
+
+    {
         "farmergreg/vim-lastplace"
     },
 
@@ -93,7 +98,6 @@ require("lazy").setup({
 
     -- Messy ...
     { "WhoIsSethDaniel/mason-tool-installer.nvim" },
-    { 'j-hui/fidget.nvim',                        tag = 'legacy',                                   opts = {} },
     { 'VonHeikemen/lsp-zero.nvim',                branch = 'v3.x' },
     { 'neovim/nvim-lspconfig' },
     { 'hrsh7th/cmp-nvim-lsp' },

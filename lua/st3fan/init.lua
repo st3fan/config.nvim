@@ -17,4 +17,6 @@ require("st3fan.lsp")
 require("st3fan.utils")
 require("st3fan.startup")
 
+require("st3fan.playground")
+
 require("st3fan.ui")
