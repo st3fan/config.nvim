@@ -21,3 +21,5 @@ require("st3fan.mini")
 require("st3fan.playground")
 
 require("st3fan.ui")
+
+require("st3fan.sateh")

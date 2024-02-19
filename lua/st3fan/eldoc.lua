@@ -6,11 +6,11 @@ local util = require('vim.lsp.util')
 
 local M = {}
 
-function is_rls(contents)
+local function is_rls(contents)
     return contents.language and contents.language == "rust"
 end
 
-function is_gopls(contents)
+local function is_gopls(contents)
     return type(contents.value) == "string" and vim.startswith(contents.value, "```go\n")
 end
 
