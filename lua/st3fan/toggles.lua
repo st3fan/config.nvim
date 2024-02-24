@@ -3,22 +3,6 @@
 -- file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 --
--- Show the filename in the top right
---
-
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = { "*" },
-    callback = function(args)
-        local ft = vim.bo[args.buf].filetype
-        if ft == "go" then
-            vim.wo.winbar = "%=%m %f"
-        else
-            vim.wo.winbar = ""
-        end
-    end
-})
-
---
 -- Toggle Theme
 --
 
