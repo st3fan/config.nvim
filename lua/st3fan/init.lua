@@ -7,6 +7,7 @@ require("st3fan.lazy")
 require("st3fan.remap")
 
 require("st3fan.bling")
+require("st3fan.conform")
 require("st3fan.lsp")
 require("st3fan.neodev")
 require("st3fan.telescope")

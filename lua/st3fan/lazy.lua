@@ -60,16 +60,27 @@ require("lazy").setup({
     "farmergreg/vim-lastplace"
   },
 
-  {
-    'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    opts = {} -- this is equalent to setup({}) function
-  },
+  -- {
+  --   'windwp/nvim-autopairs',
+  --   event = "InsertEnter",
+  --   opts = {} -- this is equalent to setup({}) function
+  -- },
 
   {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000
+  },
+
+  {
+    "stevearc/conform.nvim",
+    opts = {},
+  },
+
+  {
+    'numToStr/Comment.nvim',
+    opts = {},
+    lazy = false,
   },
 
   {

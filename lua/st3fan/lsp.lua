@@ -1,3 +1,7 @@
+-- This Source Code Form is subject to the terms of the Mozilla Public
+-- License, v. 2.0. If a copy of the MPL was not distributed with this
+-- file, You can obtain one at http://mozilla.org/MPL/2.0/
+
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(_, bufnr)
@@ -22,6 +26,7 @@ require('mason-lspconfig').setup({
     "jsonls",
     "lua_ls",
     "pyright",
+    "ruff_lsp",
     "rust_analyzer",
     "terraformls",
   },
@@ -66,9 +71,19 @@ lspconfig.rust_analyzer.setup({
 })
 
 lspconfig.pyright.setup({
-  -- TODO
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "*.py",
+      callback = function(args)
+        require("conform").format({ bufnr = bufnr })
+      end,
+    })
+  end
 })
 
+lspconfig.ruff_lsp.setup({
+  -- TODO
+})
 
 lspconfig.html.setup({
   -- TODO
@@ -107,6 +122,10 @@ lspconfig.lua_ls.setup({
   end
 })
 
+--
+-- Setup cmp
+--
+
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 local cmp_format = require('lsp-zero').cmp_format()
@@ -114,6 +133,9 @@ local cmp_format = require('lsp-zero').cmp_format()
 require('luasnip.loaders.from_vscode').load()
 
 cmp.setup({
+  completion = {
+    autocomplete = false,
+  },
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
