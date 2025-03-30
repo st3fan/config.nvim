@@ -1,12 +1,12 @@
 return {
-  {
     "nvim-lualine/lualine.nvim",
-    opts = {
-      options = {
-        -- Remove the pointy triangle separators
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+        require("lualine").setup({
+		options = {
         component_separators = "",
-        section_separators = "",
+        section_separators = { left = "", right = "" },
       },
-    },
-  },
+	})
+    end,
 }

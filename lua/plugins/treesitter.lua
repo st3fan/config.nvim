@@ -1,29 +1,23 @@
 return {
-  -- add more treesitter parsers
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      highlight = {
-        enable = true,
-      },
+  "nvim-treesitter/nvim-treesitter",
+  event = { "BufReadPre", "BufNewFile" },
+  build = ":TSUpdate",
+  config = function()
+    require("nvim-treesitter.configs").setup({
       ensure_installed = {
-        "bash",
-        "go",
-        "html",
-        "javascript",
         "json",
         "lua",
         "markdown",
-        "markdown_inline",
         "python",
-        "query",
-        "regex",
-        "rust",
-        "tsx",
-        "typescript",
-        "vim",
         "yaml",
       },
-    },
-  },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+      rainbow = {
+        enable = true,
+      },
+    })
+  end,
 }
